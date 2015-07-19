@@ -30,13 +30,11 @@ public class Login extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "Please, fill the fields", Toast.LENGTH_SHORT).show();
         }
 
-
         else if(usermail.matches("")){
 
             Toast.makeText(getApplicationContext(),"Please, Enter the Email!",Toast.LENGTH_SHORT).show();
 
         }
-
 
         else if(pass.getText().toString().matches("")){
 
@@ -50,18 +48,21 @@ public class Login extends ActionBarActivity {
             startActivity(intent);
 
         }
-        else
-        {
+
+        else   {
 
             Toast.makeText(getApplicationContext(), "wrong email or password!", Toast.LENGTH_SHORT).show();
 
         }
 
-
-
     }
 
+    public void forgotPassword(View view){
 
+        Intent intent = new Intent(this,ForgotPassword.class);
+        startActivity(intent);
+
+    }
 
 
     public void Signup(View view) {

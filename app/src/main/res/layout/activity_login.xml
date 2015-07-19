@@ -75,6 +75,7 @@
         android:layout_height="wrap_content"
         android:text="Forgot Password ?"
         android:id="@+id/forgotpass"
+        android:onClick="forgotPassword"
         android:layout_below="@+id/pass"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
