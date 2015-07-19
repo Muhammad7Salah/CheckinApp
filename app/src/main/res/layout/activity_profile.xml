@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.toshiba.myapplication.Profile"
+    android:background="#ffffff">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="3"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile Name"
+            android:textSize="30dp"
+            android:padding="15dp"
+            android:background="#0055ff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="198dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/pp"
+            android:src="@drawable/ppp"
+            android:scaleType="center"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#0055ff"
+            android:textSize="@dimen/abc_dropdownitem_icon_width"
+            android:id="@+id/about" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test test test test "
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:id="@+id/aboutme"
+            android:textColor="#000000"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>
