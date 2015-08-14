@@ -7,9 +7,6 @@ import android.view.MenuItem;
 
 
 public class ForgotPassword extends ActionBarActivity {
-// yasta lw za3lan aw mtday2 mn 7aga 2ool msh lazm tstna 2osb3een w tegy t2ool ?
-    //yasta lazem afakkar fel 7al lewa7dy el-awel :)
-    //test tany
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
