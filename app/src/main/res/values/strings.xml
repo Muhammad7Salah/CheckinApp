@@ -6,4 +6,5 @@
     <string name="title_activity_sign_up">SignUp</string>
     <string name="title_activity_profile">Profile</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
+    <string name="title_activity_search_list">SearchList</string>
 </resources>

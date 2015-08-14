@@ -1,8 +1,14 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.toshiba.myapplication.Profile"
-    android:background="#ffffff">
+    >
 
 
     <LinearLayout
@@ -21,6 +27,28 @@
             android:background="#0055ff"
             android:textColor="#ffffff"
             android:textStyle="bold"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+
+        <ImageButton
+            android:layout_width="92dp"
+            android:layout_height="88dp"
+            android:src="@drawable/search"
+            android:id="@+id/searching"
+            />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/searchp"
+                />
+
+        </LinearLayout>
 
         <ImageView
             android:layout_width="198dp"
@@ -53,5 +81,8 @@
             />
 
 
+
+
     </LinearLayout>
 </RelativeLayout>
+</ScrollView>
