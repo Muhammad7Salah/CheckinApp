@@ -4,11 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-// *3ash ya salah (Y) 5alst akl ??*
+
 
 public class ForgotPassword extends ActionBarActivity {
-
-    //a mo'men
+// yasta lw za3lan aw mtday2 mn 7aga 2ool msh lazm tstna 2osb3een w tegy t2ool ?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
