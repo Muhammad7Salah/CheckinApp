@@ -10,23 +10,20 @@
     tools:context="com.example.toshiba.myapplication.Profile"
     >
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar">
+    </include>
+
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar"
         android:weightSum="3"
         android:layout_alignParentBottom="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profile Name"
-            android:textSize="30dp"
-            android:padding="15dp"
-            android:background="#0055ff"
-            android:textColor="#ffffff"
-            android:textStyle="bold"/>
 
         <LinearLayout
             android:orientation="horizontal"

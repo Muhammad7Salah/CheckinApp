@@ -8,14 +8,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 
 public class Login extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+
     }
 
     public void signin(View view){
@@ -65,7 +73,7 @@ public class Login extends ActionBarActivity {
     }
 
 
-    public void Signup(View view) {
+    public void signup(View view) {
         Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
     }
