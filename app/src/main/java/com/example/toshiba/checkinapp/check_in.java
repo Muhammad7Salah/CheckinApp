@@ -5,15 +5,17 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class check_in extends FragmentActivity implements OnMapReadyCallback {
+public class check_in extends FragmentActivity implements OnMapReadyCallback,GoogleMap.OnMapLongClickListener{
 
     GoogleMap map;
 
@@ -53,10 +55,10 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
 
         map = googleMap;
-
+        map.setOnMapLongClickListener(this);
         googleMap.setOnMyLocationChangeListener(myLocationChangeListener);
-
         googleMap.setMyLocationEnabled(true);
+        googleMap.setInfoWindowAdapter(Info_window_adapter.class);
     }
 
     private GoogleMap.OnMyLocationChangeListener myLocationChangeListener = new GoogleMap.OnMyLocationChangeListener() {
@@ -64,13 +66,24 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback {
         public void onMyLocationChange(Location location) {
             LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
             if(map != null){
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+                //map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
 
-                map.addMarker(new MarkerOptions()
-                        .title("Cairo")
-                        .snippet("The most Crowded city in Egypt.")
+               Marker mark=map.addMarker(new MarkerOptions()
+                        .title("Egypt")
+                        .snippet("Welcome")
                         .position(loc));
+                mark.showInfoWindow();
             }
         }
     };
+
+    @Override
+    public void onMapLongClick(LatLng point) {
+        Marker marker=map.addMarker(new MarkerOptions()
+                .title("Egypt")
+                .snippet("Welcome")
+                .position(point));
+        marker.showInfoWindow();
+    }
+
 }

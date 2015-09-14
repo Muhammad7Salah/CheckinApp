@@ -1,44 +1,34 @@
 package com.example.toshiba.checkinapp;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.support.v7.widget.Toolbar;
 
 
-public class Profile extends ActionBarActivity {
+public class PlaceDetails extends ActionBarActivity {
 
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_place_details);
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.mipmap.ic_launcher);
         setTitle("jkjho");
+        toolbar.setTitleTextColor(0xAA000000);
 
-        Button location = (Button)findViewById(R.id.intent_location_button);
-        location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Profile.this, check_in.class);
-                startActivity(i);
-            }
-        });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        getMenuInflater().inflate(R.menu.menu_place_details, menu);
         return true;
     }
 
@@ -56,6 +46,4 @@ public class Profile extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

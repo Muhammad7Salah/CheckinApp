@@ -49,7 +49,15 @@
 
         <activity
             android:name=".check_in"
-            android:label="@string/title_activity_check_in">
+            android:label="@string/title_activity_check_in" >
+        </activity>
+        <activity
+            android:name=".PlaceDetails"
+            android:label="@string/title_activity_place_details" >
+        </activity>
+        <activity
+            android:name=".SearchList"
+            android:label="@string/title_activity_search_list" >
         </activity>
     </application>
 
