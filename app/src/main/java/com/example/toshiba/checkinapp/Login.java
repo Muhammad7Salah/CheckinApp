@@ -50,7 +50,7 @@ public class Login extends ActionBarActivity {
 
         }
 
-        else if(usermail.equals("test") && userpass.equals("password")) {
+        else if(usermail.equals("t") && userpass.equals("1")) {
 
             Intent intent = new Intent(this, Profile.class);
             startActivity(intent);

@@ -48,14 +48,14 @@
         android:text="Sign In"
         android:background="#0055AA"
         android:id="@+id/signin"
-        android:layout_below="@+id/pass"
         android:textColor="#FFFFFF"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="46dp"
-        android:onClick="signin"/>
+        android:layout_marginTop="57dp"
+        android:onClick="signin"
+        android:layout_below="@+id/pass"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="49dp"
+        android:layout_marginEnd="49dp" />
 
 
     <Button
@@ -65,12 +65,12 @@
         android:background="#0055AA"
         android:id="@+id/signup"
         android:textColor="#FFFFFF"
-        android:layout_marginRight="46dp"
-        android:layout_marginEnd="46dp"
+        android:onClick="signup"
         android:layout_alignTop="@+id/signin"
-        android:layout_alignRight="@+id/pass"
-        android:layout_alignEnd="@+id/pass"
-        android:onClick="signup" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp" />
 
     <TextView
         android:layout_width="wrap_content"

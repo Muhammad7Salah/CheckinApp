@@ -8,7 +8,10 @@ import android.support.v7.widget.Toolbar;
 
 
 public class PlaceDetails extends ActionBarActivity {
-
+    public String nam;
+    public String ID;
+    public String lang;
+    public String lat;
     private Toolbar toolbar;
 
     @Override

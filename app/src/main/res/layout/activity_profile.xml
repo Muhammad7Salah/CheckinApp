@@ -35,11 +35,11 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="198dp"
-            android:layout_height="210dp"
+            android:layout_width="264dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:id="@+id/pp"
-            android:src="@drawable/ppp"
+            android:src="@drawable/healthcare2"
             android:scaleType="center"
             android:layout_gravity="center_horizontal" />
 
@@ -56,7 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="test test test test "
+            android:text="Hospital&apos;s Check_in"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:textSize="18dp"
