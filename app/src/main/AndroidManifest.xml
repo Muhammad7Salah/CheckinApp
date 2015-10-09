@@ -47,6 +47,11 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <!--
+       use this key for APK or debug version
+       AIzaSyCuHt7CajeL_LqmUxVTXo6yg46rMbyalfs
+       -->
+
         <activity
             android:name=".check_in"
             android:label="@string/title_activity_check_in" >
@@ -58,6 +63,10 @@
         <activity
             android:name=".SearchList"
             android:label="@string/title_activity_search_list" >
+        </activity>
+        <activity
+            android:name=".Question"
+            android:label="@string/title_activity_question" >
         </activity>
     </application>
 
