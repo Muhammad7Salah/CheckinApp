@@ -4,18 +4,17 @@
     android:orientation="vertical"
     tools:context="com.example.toshiba.checkinapp.PlaceDetails">
 
-    <RatingBar android:layout_width="wrap_content" android:layout_gravity="center"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/rating"/>
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBtn"
-        android:text="Rate it"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center" />
-
+        android:text="Save"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

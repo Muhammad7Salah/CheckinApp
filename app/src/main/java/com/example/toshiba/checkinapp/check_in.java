@@ -113,13 +113,25 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback,Goo
 
     @Override
     public void onMapLongClick(final LatLng point) {
+        final Dialog dialoog = new Dialog(this);
+        dialoog.setContentView(R.layout.dialog_save);
+        final EditText name=(EditText)dialoog.findViewById(R.id.editText);
+        final String save_name=name.getText().toString();
+        Button b2 = (Button) dialoog.findViewById(R.id.button2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveplace(save_name, point);
+                dialoog.dismiss();
 
-        for (int i=0;i<place_name.size();i++){
+            }
+        });
+
+        dialoog.show();
             Marker mark = map.addMarker(new MarkerOptions()
-                    .title(place_name.get(i))
+                    .title("nice")
                     .snippet("Hosiptal")
-                    .position(point));
-        }
+                    .position(place_latlng.get(0)));
     }
 
     @Override
@@ -141,17 +153,6 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback,Goo
                                   }
                               }
         );
-
-        final EditText name=(EditText)dialog.findViewById(R.id.editText);
-        final String save_name=name.getText().toString();
-        Button b2 = (Button) dialog.findViewById(R.id.button2);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveplace(save_name, pointer);
-            dialog.dismiss();
-            }
-        });
 
         dialog.show();
 
