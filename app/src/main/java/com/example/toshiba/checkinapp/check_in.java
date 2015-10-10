@@ -1,8 +1,12 @@
 package com.example.toshiba.checkinapp;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,11 +29,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 // issued on 9/10
-public class check_in extends FragmentActivity implements OnMapReadyCallback,GoogleMap.OnMapLongClickListener,GoogleMap.OnMarkerClickListener {
-    private static final long min_distance=10;
-    private static final long min_time=1000*60*1;
+public class check_in extends FragmentActivity implements OnMapReadyCallback,GoogleMap.OnMapLongClickListener,GoogleMap.OnMarkerClickListener,LocationListener {
+    private static final long min_distance=1; // 1 meters
+    private static final long min_time=1000*60*1; // 1 minute
         ArrayList <LatLng> place_latlng=new ArrayList<LatLng>();
         ArrayList <String> place_name=new ArrayList<String>();
+    LocationManager locationManager ;
+    String provider;
+
+
 
     GoogleMap map;
 
@@ -42,8 +50,34 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback,Goo
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         place_name.add("momen");
+        // Getting LocationManager object
+        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
+        // Creating an empty criteria object
+        Criteria criteria = new Criteria();
+
+        // Getting the name of the provider that meets the criteria
+        provider = locationManager.getBestProvider(criteria, false);
+
+        if(provider!=null && !provider.equals("")) {
+
+            // Get the location from the given provider
+            Location location = locationManager.getLastKnownLocation(provider);
+
+            locationManager.requestLocationUpdates(provider, min_time, min_distance, this);
+
+            if (location != null) {
+                onLocationChanged(location);
+            } else {
+                Toast.makeText(getBaseContext(), "Location can't be retrieved", Toast.LENGTH_SHORT).show();
+
+            }
+        }
     }
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,30 +101,15 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback,Goo
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         map = googleMap;
         map.setOnMapLongClickListener(this);
-        googleMap.setOnMyLocationChangeListener(myLocationChangeListener);
         googleMap.setMyLocationEnabled(true);
         map.setOnMarkerClickListener(this);
     }
-
-    private GoogleMap.OnMyLocationChangeListener myLocationChangeListener = new GoogleMap.OnMyLocationChangeListener() {
-        @Override
-        public void onMyLocationChange(Location location) {
-            LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
-            if (map != null) {
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
-                Marker mark = map.addMarker(new MarkerOptions()
-                        .title("HEY")
-                        .snippet("This is my location")
-                        .position(loc));
-
-            }
-        }
-    };
 
     @Override
     public void onMapLongClick(final LatLng point) {
@@ -142,4 +161,27 @@ public class check_in extends FragmentActivity implements OnMapReadyCallback,Goo
             place_name.add(name);
             place_latlng.add(latude);
         }}
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+
+
+
 }

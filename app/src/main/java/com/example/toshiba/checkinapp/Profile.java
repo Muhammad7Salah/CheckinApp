@@ -23,7 +23,7 @@ public class Profile extends ActionBarActivity {
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.mipmap.ic_launcher);
-        setTitle("jkjho");
+        setTitle("PROFILE");
 
         Button location = (Button)findViewById(R.id.intent_location_button);
         location.setOnClickListener(new View.OnClickListener() {
